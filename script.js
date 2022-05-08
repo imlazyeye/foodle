@@ -13103,6 +13103,8 @@ const targetWords = [
 "sugar",
 ]
 
+const jsConfetti = new JSConfetti()
+
 const WORD_LENGTH = 5
 const FLIP_ANIMATION_DURATION = 500
 const DANCE_ANIMATION_DURATION = 1000
@@ -13332,6 +13334,7 @@ function checkWinLose(guess, tiles) {
 
   if (guess === targetWord) {
     stopInteraction()
+    jsConfetti.addConfetti()
     const compliments = ["Genius", "Magnificent", "Impressive", "Splendid", "Great", "Phew", "Zach is stinky!"]
     showAlert(compliments[usedRows - 1], 5000)
     danceTiles(tiles)
